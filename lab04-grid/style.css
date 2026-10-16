@@ -1,0 +1,51 @@
+/* style.css - final responsive version: 3 / 2 / 1 columns */
+* { box-sizing: border-box; }
+
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    line-height: 1.5;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;          /* links wrap instead of overflowing */
+    gap: 10px 15px;
+    margin-bottom: 30px;
+}
+nav a {
+    text-decoration: none;
+    color: blue;
+    padding: 8px 4px;         /* comfortable tap target on mobile */
+}
+
+/* MOBILE FIRST: 1 column (< 600px) */
+main.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* TABLET: 2 columns (600px - 1023px, includes 768px) */
+@media (min-width: 600px) {
+    main.cards { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* DESKTOP: 3 columns (>= 1024px, includes 1440px) */
+@media (min-width: 1024px) {
+    main.cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+.card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+.card h2 { margin-top: 0; }
+
+footer {
+    margin-top: 40px;
+    color: #666;
+    font-size: 0.9em;
+}
